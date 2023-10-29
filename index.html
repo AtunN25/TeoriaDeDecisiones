@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- Enlace al archivo CSS externo -->
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    
+</head>
+<body>
+    
+    
+    <div class="grid grid-cols-6 gap-4 p-4 bg-gradient-to-r from-white to-slate-400" >
+        
+        <div class="div1 col-span-6 h-24 bg-white bg-opacity-10 shadow-lg rounded-lg p-4">
+            <center>
+                <h1 class="text-2xl font-bold text-gray-700 uppercase">Toma de Decisiones Bajo Certeza</h1>
+                <h2 class="text-2xl text-gray-700 font-serif">Método AHP</h2>
+            </center>
+        </div>
+
+        <div class="div2 col-span-3 h-7/8 row-span-3 bg-white bg-opacity-10 shadow-lg rounded-lg p-4">
+            <p class="text-lg text-gray-700 font-serif" >De acuerdo a las decisiones que tiene que tomar, llene la siguiente tabla:</p>
+            <p class="text-lg text-gray-700 font-serif">(*Ingrese los datos para crear la tabla:*)</p>
+
+            <!--<label for="filas">Ingrese el número de opciones: </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" id="opciones" name="filas" min="1" value="3">
+            <br>
+            <label for="columnas">Ingrese el número de criterios: </label>
+            <input type="number" id="criterios" name="columnas" min="1" value="3">
+            <br>
+            <button id="crearMatriz">Crear Matriz</button>-->
+                <br>
+
+            <div class="w-full max-w-xs justify-between">
+                <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                  <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="filas">
+                        Ingrese el número de opciones: 
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" id="opciones" name="filas" min="1" value="3">
+                  </div>
+                  <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="columnas">
+                      Ingrese el número de criterios:
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" id="criterios" name="columnas" min="1" value="3">
+                  </div>
+                  <div class="flex items-center justify-between">
+                    
+                    
+                  </div>
+                </form>
+                <button class="bg-white hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" id="crearMatriz">
+                    1.Crear Matriz
+                </button>
+            </div>
+
+        </div>
+
+        <div class="div3 col-span-3 row-span-3 bg-white bg-opacity-10 shadow-lg rounded-lg p-4"> 
+
+            
+            <p class="text-lg text-gray-700 font-serif" >Alternativas:</p>
+            
+            <button class="bg-white hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" id="alternativas">3.generar alternativas</button>
+            <br>
+            <div id="matriz-container-demasopciones"></div>
+            <div id="contenedor-dinamico" class=""></div>
+            <br>
+            <button class="bg-white hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" id="guardarAlternativas">4.Guardar Alternativas</button>
+            <br>
+            
+        </div>
+
+        <div class="div4 col-span-3 row-span-3 bg-white bg-opacity-10 shadow-lg rounded-lg p-4">
+            <!--<p class="text-lg text-gray-700 font-serif">Cuadro Opcional:</p>
+            <div id="matriz-container"></div>-->
+            <br>
+            <p class="text-lg text-gray-700 font-serif">Ponderación de criterios(importante)*:</p>
+            <br>
+            <div id="matriz-container-adicional"></div>
+            <!--<button id="guardarMatriz">resolver</button>-->
+            <br>
+            <button class="bg-white hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" id="guardarMatriz">
+                2.Resolver
+              </button>
+              <br>
+              <p class="text-lg text-gray-700 font-serif">Representatividad de cada criterio:</p>
+            <div id="resolucion-matriz-container"></div>
+        </div>
+
+        <div class="div5 col-span-3 row-span-3 bg-white bg-opacity-10 shadow-lg rounded-lg p-4"> 
+            <br>
+            <button class="bg-white hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" id="resolverAlternativas">5.resolver Alternativas
+
+            </button>
+            <br>
+            <div id="resolucionDeAlternativas">
+                <div id="resolucionDeAlternativas1"></div>
+                <div id="resolucionDeAlternativas2"></div>
+            </div>
+            
+
+        </div>
+ 
+    </div>
+    
+    <script src="index.js"></script>
+        
+    
+</body>
+</html>
